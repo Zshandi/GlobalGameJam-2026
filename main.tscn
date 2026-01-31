@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://blfxxb66ypa2d"]
 
 [ext_resource type="PackedScene" uid="uid://l7r78n0dlipt" path="res://character.tscn" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://bco248ch0kyst" path="res://layer.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://b6lkky6ocw7he" path="res://collision_shape_render.gd" id="2_h2yge"]
 
 [node name="Node2D" type="Node2D" unique_id=1458390218]
@@ -11,7 +10,6 @@ position = Vector2(284, 260)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1813964599]
 position = Vector2(408, 472)
-script = ExtResource("2_1bvp3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1014427145]
 polygon = PackedVector2Array(-160, -16, -160, 16, 160, 16, 160, -16, 160, -48, 56, -48, 56, -16)
