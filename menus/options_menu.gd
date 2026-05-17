@@ -107,8 +107,7 @@ func _on_erase_cancel_button_pressed() -> void:
 
 func _on_erase_confirm_button_pressed() -> void:
 	close_erase_save_confirmation()
-	# TODO: Actually erase save data once we have save data
-	print_debug("ERASE ASVE CONFIRMED")
+	SaveProgress.erase_save_data()
 
 
 func _on_reset_to_defaults_button_pressed() -> void:

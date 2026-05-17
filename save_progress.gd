@@ -3,6 +3,11 @@ extends Node
 var current_level: String = ""
 var completed_levels: Dictionary[String, bool] = {}
 
+func erase_save_data() -> void:
+	current_level = ""
+	completed_levels = {}
+	write_progress()
+
 func set_level_completed(level_id: String) -> void:
 	if not level_id in completed_levels:
 		completed_levels[level_id] = true

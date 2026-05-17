@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://brrcafmwdgw3n" path="res://menus/main_menu.gd" id="1_yjgyn"]
 [ext_resource type="Theme" uid="uid://dlyu8bx5p5ack" path="res://menus/menu_theme.tres" id="2_ij7vn"]
 [ext_resource type="Texture2D" uid="uid://den88hqm0tdyb" path="res://assets/background-web.png" id="2_rqbgu"]
+[ext_resource type="PackedScene" uid="uid://gin2aet0bvt3" path="res://menus/level_select_menu.tscn" id="5_a63lr"]
 [ext_resource type="PackedScene" uid="uid://bbngi2tsy082p" path="res://menus/options_menu.tscn" id="5_oblsv"]
 
 [node name="MainMenuLayer" type="CanvasLayer" unique_id=497769854]
@@ -47,6 +48,7 @@ theme = ExtResource("2_ij7vn")
 text = "Start"
 
 [node name="LevelSelectButton" type="Button" parent="MainMenu/VBoxContainer/MenuButtonsContainer" unique_id=399497798]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_ij7vn")
 text = "Level Select"
@@ -62,11 +64,16 @@ layout_mode = 2
 theme = ExtResource("2_ij7vn")
 text = "Exit"
 
+[node name="LevelSelectMenu" parent="." unique_id=894758057 instance=ExtResource("5_a63lr")]
+unique_name_in_owner = true
+
 [node name="OptionsMenu" parent="." unique_id=1041693007 instance=ExtResource("5_oblsv")]
 unique_name_in_owner = true
 visible = false
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/MenuButtonsContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/MenuButtonsContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MenuButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MenuButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="closed" from="LevelSelectMenu" to="." method="_on_level_select_menu_closed"]
 [connection signal="closed" from="OptionsMenu" to="." method="_on_options_menu_closed"]

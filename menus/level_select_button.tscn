@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brgybu6gnp1cb"]
+
+[ext_resource type="Theme" uid="uid://dlyu8bx5p5ack" path="res://menus/menu_theme.tres" id="1_5b00k"]
+[ext_resource type="Texture2D" uid="uid://jgytjojefk5r" path="res://assets/graphics/ui/checkmark.png" id="2_76ixh"]
+[ext_resource type="Script" uid="uid://d2stkwuv5lk2d" path="res://menus/level_select_button.gd" id="2_ib8d3"]
+
+[node name="LevelSelectButton" type="Button" unique_id=485669912]
+custom_minimum_size = Vector2(100, 100)
+theme = ExtResource("1_5b00k")
+text = "1"
+script = ExtResource("2_ib8d3")
+
+[node name="LevelCompletedIndicator" type="Sprite2D" parent="." unique_id=578871998]
+unique_name_in_owner = true
+visible = false
+position = Vector2(84, 15)
+texture = ExtResource("2_76ixh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

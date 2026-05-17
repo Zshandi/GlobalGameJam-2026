@@ -17,7 +17,16 @@ func _on_options_button_pressed() -> void:
 	%MainMenu.hide()
 	%OptionsMenu.show()
 
+func _on_level_select_button_pressed() -> void:
+	%MainMenu.hide()
+	%LevelSelectMenu.show()
+
 func _on_options_menu_closed() -> void:
 	%OptionsMenu.hide()
 	%MainMenu.show()
 	%OptionsButton.grab_focus()
+
+func _on_level_select_menu_closed() -> void:
+	%LevelSelectMenu.hide()
+	%MainMenu.show()
+	%LevelSelectButton.grab_focus()
