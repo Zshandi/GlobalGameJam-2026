@@ -13,7 +13,8 @@ func play_music(music: AudioStream) -> void:
 	if music_player.stream != music:
 		music_player.stop()
 		music_player.stream = music
-		music_player.play()
+	
+	resume_music()
 
 func stop_music() -> void:
 	music_player.stop()

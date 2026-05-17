@@ -7,7 +7,11 @@ func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_button_pressed() -> void:
-	LevelManager.load_level(0)
+	var current_level = SaveProgress.get_saved_level()
+	if current_level != "":
+		LevelManager.load_level_from_scene(current_level)
+	else:
+		LevelManager.load_level(0)
 
 func _on_options_button_pressed() -> void:
 	%MainMenu.hide()

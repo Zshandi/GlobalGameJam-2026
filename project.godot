@@ -27,6 +27,7 @@ LevelManager="*uid://biucudf4cgbpg"
 MusicPlayer="*uid://45kyyyt8wwmn"
 Options="*uid://cu6b337h6uhaf"
 ShaderTime="*uid://cbjq3bjbvggc7"
+SaveProgress="*uid://duiiolhnr0vqs"
 
 [display]
 

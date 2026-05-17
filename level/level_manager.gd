@@ -35,7 +35,12 @@ func _unhandled_key_input(_event: InputEvent) -> void:
 	if %EndScreenLayer.visible:
 		%EndScreenLayer.hide()
 		load_level(0)
-	
+
+func load_level_from_scene(scene_file: String) -> void:
+	for idx in range(len(levels)):
+		var level := levels[idx]
+		if level.get_scene_filename() == scene_file:
+			load_level(idx)
 
 func load_level(idx: int) -> void:
 	current_level = idx
@@ -43,9 +48,10 @@ func load_level(idx: int) -> void:
 		# TODO: Go to end menu
 		%EndScreenLayer.show()
 		level_node = null
+		SaveProgress.save_level(levels[0].get_scene_filename())
 		return
-		
-
+	
+	SaveProgress.save_level(levels[current_level].get_scene_filename())
 	level_node = levels[current_level].scene.instantiate()
 	get_tree().change_scene_to_node.call_deferred(level_node)
 
@@ -60,6 +66,7 @@ func _on_level_complete() -> void:
 	if current_level == -1:
 		reload_level()
 	else:
+		SaveProgress.set_level_completed(levels[current_level].get_scene_filename())
 		load_level(current_level + 1)
 
 func load_main_menu():
