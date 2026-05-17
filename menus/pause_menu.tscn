@@ -57,6 +57,11 @@ layout_mode = 2
 theme = ExtResource("3_ybqm1")
 text = "Options"
 
+[node name="SkipButton" type="Button" parent="PauseMenu/VBoxContainer/MenuButtonsContainer" unique_id=1115864358]
+layout_mode = 2
+theme = ExtResource("3_ybqm1")
+text = "Skip Level"
+
 [node name="ExitButton" type="Button" parent="PauseMenu/VBoxContainer/MenuButtonsContainer" unique_id=1325334303]
 layout_mode = 2
 theme = ExtResource("3_ybqm1")
@@ -70,5 +75,6 @@ show_erase_save_data_button = false
 [connection signal="pressed" from="PauseMenu/VBoxContainer/MenuButtonsContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/MenuButtonsContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/MenuButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/MenuButtonsContainer/SkipButton" to="." method="_on_skip_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/MenuButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="closed" from="OptionsMenu" to="." method="_on_options_menu_closed"]
