@@ -38,6 +38,10 @@ func _on_restart_button_pressed() -> void:
 	toggle_pause()
 	LevelManager.reload_level()
 
+func _on_skip_button_pressed() -> void:
+	toggle_pause()
+	LevelManager.skip_current_level()
+
 func _on_resume_button_pressed() -> void:
 	toggle_pause()
 

@@ -61,6 +61,13 @@ func reload_level() -> void:
 	await get_tree().create_timer(0.1).timeout
 	level_node = get_tree().current_scene
 
+func skip_current_level() -> void:
+	var next_level = current_level + 1
+	if next_level >= len(levels):
+		# Make sure we can't skip the last level
+		next_level = len(levels) - 1
+	load_level(next_level)
+
 func _on_level_complete() -> void:
 	# TODO: Show win screen with option to go to next level
 	if current_level == -1:
